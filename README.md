@@ -1,2 +1,2 @@
 # react-training
-Training files for Recat
+Training files for React
