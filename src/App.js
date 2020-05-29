@@ -15,7 +15,7 @@ function App() {
 
               <div className="container">
                   <div className="row" >
-                    <LicensePlate plate={CALIFORNIA_PLATE} buttonText="Add to cart"></LicensePlate>
+                    <LicensePlate plate={CALIFORNIA_PLATE} buttonText="Add to cart" />
                   </div>
               </div>
           </main>
