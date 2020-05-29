@@ -1,17 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {Jumbotron} from "./jumbotron/Jumbotron";
+import {Navigation} from "./navigation/Navigation";
+import {LicensePlate} from "./license-plate/LicensePlate";
+import {CALIFORNIA_PLATE} from "./mock-data";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-      </header>
-    </div>
+      <>
+          <Navigation/>
+
+          <main role="main">
+              <Jumbotron title="Welcome to our store" description="Browse our collection of license plates"/>
+
+              <div className="container">
+                  <div className="row" >
+                    <LicensePlate plate={CALIFORNIA_PLATE} buttonText="Add to cart"></LicensePlate>
+                  </div>
+              </div>
+          </main>
+
+          <footer className="container">
+              <p>&copy; License Plate Store 2020</p>
+          </footer>
+      </>
   );
 }
 
