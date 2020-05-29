@@ -1,20 +1,20 @@
 import React from "react";
 
-export class LicensePlate extends React.Component  {
+export function LicensePlate(props) {
 
-    render() {
-        return (
-            <div className="col-md-4">
-                <h2>{this.props.plate.title}</h2>
-                <img src={this.props.plate.picture} className="img-fluid" />
-                <p>{this.props.plate.description}</p>
-                <div>
-                  <h2 className="float-left">$xx</h2>
-                  <button className="btn btn-primary float-right" role="button">
-                    {this.props.buttonText}
-                  </button>
-                </div>
+    const {plate, buttonText} = props;
+
+    return (
+        <div className="col-md-4">
+            <h2>{plate.title}</h2>
+            <img src={plate.picture} className="img-fluid" />
+            <p>{plate.description}</p>
+            <div>
+              <h2 className="float-left">${plate.price}</h2>
+              <button className="btn btn-primary float-right" role="button">
+                {buttonText}
+              </button>
             </div>
-        )
-    }
+        </div>
+    );
 }
