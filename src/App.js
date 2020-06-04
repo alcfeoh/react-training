@@ -3,7 +3,7 @@ import './App.css';
 import {Jumbotron} from "./jumbotron/Jumbotron";
 import {Navigation} from "./navigation/Navigation";
 import {LicensePlate} from "./license-plate/LicensePlate";
-import {CALIFORNIA_PLATE, LICENSE_PLATES} from "./mock-data";
+import {LICENSE_PLATES} from "./mock-data";
 
 export class App extends React.Component {
 
