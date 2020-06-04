@@ -3,14 +3,14 @@ import './App.css';
 import {Jumbotron} from "./jumbotron/Jumbotron";
 import {Navigation} from "./navigation/Navigation";
 import {LicensePlate} from "./license-plate/LicensePlate";
-import {CALIFORNIA_PLATE} from "./mock-data";
+import {CALIFORNIA_PLATE, LICENSE_PLATES} from "./mock-data";
 
 export class App extends React.Component {
 
     constructor() {
         super();
         this.state = {
-            plate: CALIFORNIA_PLATE
+            plates: LICENSE_PLATES
         };
     }
 
@@ -24,7 +24,7 @@ export class App extends React.Component {
 
                     <div className="container">
                         <div className="row">
-                            <LicensePlate plate={this.state.plate} buttonText="Add to cart"/>
+                            {this.state.plates.map(plate => <LicensePlate plate={plate} buttonText="Add to cart"/>)}
                         </div>
                     </div>
                 </main>
