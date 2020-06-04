@@ -3,15 +3,20 @@ import './App.css';
 import {Jumbotron} from "./jumbotron/Jumbotron";
 import {Navigation} from "./navigation/Navigation";
 import {LicensePlate} from "./license-plate/LicensePlate";
-import {LICENSE_PLATES} from "./mock-data";
 
 export class App extends React.Component {
 
     constructor() {
         super();
         this.state = {
-            plates: LICENSE_PLATES
+            plates: []
         };
+    }
+
+    componentDidMount() {
+        fetch('https://lp-store.herokuapp.com/data')
+            .then(data => data.json())
+            .then(plates => this.setState({plates}));
     }
 
     render() {
