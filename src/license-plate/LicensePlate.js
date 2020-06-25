@@ -2,7 +2,7 @@ import React from "react";
 
 export function LicensePlate(props) {
 
-    const {plate, buttonText} = props;
+    const {plate, buttonText, currency = '$'} = props;
 
     const handleButtonClick = () => {
         alert("Plate added to cart");
@@ -14,7 +14,7 @@ export function LicensePlate(props) {
             <img src={plate.picture} className="img-fluid" alt="License plate" />
             <p>{plate.description}</p>
             <div>
-              <h2 className="float-left">${plate.price}</h2>
+              <h2 className="float-left">{currency}{plate.price}</h2>
               <button className="btn btn-primary float-right" onClick={handleButtonClick}>
                 {buttonText}
               </button>
