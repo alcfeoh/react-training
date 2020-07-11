@@ -4,6 +4,7 @@ import {Navigation} from "./navigation/Navigation";
 import {BrowserRouter as Router,  Switch, Route} from "react-router-dom";
 import {StoreView} from "./store-view/StoreView";
 import {CartView} from "./cart-view/CartView";
+import {CheckoutView} from "./checkout-view/CheckoutView";
 
 
 export class App extends React.Component {
@@ -21,6 +22,9 @@ export class App extends React.Component {
                     <Switch>
                         <Route path="/cart">
                             <CartView currency={this.state.currency} />
+                        </Route>
+                        <Route path="/checkout">
+                            <CheckoutView  />
                         </Route>
                          <Route path="/">
                             <StoreView currency={this.state.currency} />
