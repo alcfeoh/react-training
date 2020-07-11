@@ -1,5 +1,6 @@
 import React from "react";
 import {CurrencySwitcher} from "../currency-switcher/CurrencySwitcher";
+import {Link} from "react-router-dom";
 
 export class Navigation extends React.Component  {
 
@@ -17,13 +18,13 @@ export class Navigation extends React.Component  {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav mr-auto">
                         <li className="nav-item active">
-                            <a className="nav-link" href="/">Home <span className="sr-only">(current)</span></a>
+                            <Link to="/" className='nav-link'>Home </Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/cart">My Cart</a>
+                            <Link to="/cart" className='nav-link'>Cart </Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/checkout">Checkout</a>
+                            <Link to="/checkout" className='nav-link'>Checkout </Link>
                         </li>
                     </ul>
                     <CurrencySwitcher onChange={onCurrencyChange}/>
