@@ -14,6 +14,12 @@ export class StoreView extends React.Component {
             .then(plates => this.setState({plates}));
     }
 
+    addToCart = (plateId) => {
+        fetch('https://lp-store.herokuapp.com/cart/' + plateId, {method: 'PUT'})
+            .then(data => data.json())
+            .then(res => alert("Plate added to cart"));
+    }
+
     render() {
         return (
             <>
@@ -21,8 +27,12 @@ export class StoreView extends React.Component {
 
                 <div className="container">
                     <div className="row">
-                        {this.state.plates.map(plate => <LicensePlate plate={plate} buttonText="Add to cart"
-                                                                      currency={this.props.currency}/>)}
+                        {this.state.plates.map(plate => <LicensePlate plate={plate}
+                                                                      key={plate._id}
+                                                                      buttonText="Add to cart"
+                                                                      currency={this.props.currency}
+                                                                      handleButtonClick={() => this.addToCart(plate._id)}/>)
+                        }
                     </div>
                 </div>
             </>

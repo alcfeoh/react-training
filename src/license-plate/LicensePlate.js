@@ -2,11 +2,7 @@ import React from "react";
 
 export function LicensePlate(props) {
 
-    const {plate, buttonText, currency = '$'} = props;
-
-    const handleButtonClick = () => {
-        alert("Plate added to cart");
-    }
+    const {plate, buttonText, currency = '$', handleButtonClick} = props;
 
     return (
         <div className="col-md-4">
